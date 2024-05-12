@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Details</title>
+</head>
+<body>
+  <h1>Book Details</h1>
+  
+  <div id="bookDetails">
+    <p id="firstBookTitle"></p>
+    <p id="secondBookAuthor"></p>
+    <p id="allGenres"></p>
+  </div>
+
+  <script>
+    // Assuming the JSON data is stored in a variable named 'data'
+    const data = {
+      "Books": [
+        {
+          "title": "The Great Gatsby",
+          "author": "F. Scott Fitzgerald",
+          "publicationYear": 1925,
+          "genres": ["Fiction", "Classics"]
+        },
+        {
+          "title": "To Kill a Mockingbird",
+          "author": "Harper Lee",
+          "publicationYear": 1960,
+          "genres": ["Fiction", "Coming-of-Age"]
+        }
+      ]
+    };
+
+    // Displaying the details
+    document.getElementById("firstBookTitle").textContent = "Title of the first book: " + data.Books[0].title;
+    document.getElementById("secondBookAuthor").textContent = "Author of the second book: " + data.Books[1].author;
+    document.getElementById("allGenres").textContent = "Genres of all books: " + data.Books.map(book => book.genres.join(", ")).join("; ");
+  </script>
+</body>
+</html>
